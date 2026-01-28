@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="Ícones/favicon.ico" type="image/x-icon">
+
+  <title>Contato | Dr. Diego de Almeida </title>
+
+  <link rel="stylesheet" href="CSS/estilo.css" type="text/css">
+
+  <link rel="stylesheet" href="CSS/media_queries.css" type="text/css">
+
+  <style>
+    .hero {
+      background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url(Imagens/tile.png);
+      background-repeat: repeat;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 80vh;
+      padding: 0 10%;
+      color: var(--branco);
+      gap: 20px;
+    }
+
+    .hero h1 {
+      display: flex;
+      font-size: 4rem;
+      font-family: var(--fonte2);
+      letter-spacing: 0.1rem;
+    }
+
+    .hero h2 {
+      display: flex;
+      font-family: var(--fonte1);
+      letter-spacing: 0.1rem;
+    }
+
+    /* Formulário */
+
+    main {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--cor3);
+      align-items: center;
+      justify-content: center;
+      font-family: var(--fonte2);
+      min-height: 100vh;
+      gap: 20px;
+    }
+
+    main h2 {
+      display: flex;
+      font-size: 3rem;
+      letter-spacing: 0.1rem;
+      color: var(--cor1);
+    }
+
+    form {
+      display: flex;
+      padding: 2%;
+      justify-content: space-around;
+      align-items: center;
+      color: var(--branco);
+      background-color: var(--cor2);
+      font-family: var(--fonte1);
+      font-size: 1.2rem;
+      height: auto;
+      width: 80%;
+      border-radius: 1.5rem;
+    }
+
+    .lado_esquerdo,
+    .lado_direito {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 40%;
+    }
+
+    .campos {
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 1%;
+      border: none;
+      border-radius: 1.5rem;
+      transition: 0.3s ease;
+
+      background-color: var(--cor3);
+
+      font-family: var(--fonte1);
+      font-size: 1rem;
+    }
+
+    /* Botões de Enviar e Limpar */
+
+    .botoes {
+      display: flex;
+      justify-content: right;
+      gap: 10px;
+    }
+
+    .botoes input {
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 1% 2%;
+      font-family: var(--fonte1);
+      font-size: 1.2rem;
+      background-color: var(--cor3);
+      border: none;
+      color: var(--cor1);
+      border-radius: 1.5rem;
+      transition: 0.5s ease;
+    }
+
+    .botoes input:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .botoes input:active {
+      background-color: var(--cor1);
+      color: var(--branco);
+      transition: 0.01s ease;
+    }
+
+    textarea {
+      resize: none;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 1rem;
+      font-family: var(--fonte1);
+      font-size: 1rem;
+      background-color: var(--cor3);
+      transition: 0.3s ease;
+    }
+
+    .campos:user-invalid {
+      box-shadow: 0 0 5px red;
+    }
+
+    .campos:focus,
+    textarea:focus {
+      outline: none;
+      border: none;
+      transform: scale(1.02);
+      box-shadow: 0 0 5px var(--preto);
+    }
+
+    /* FAQ */
+
+    .faqsection {
+      min-height: auto;
+      max-height: auto;
+      gap: 50px;
+      padding: 2% 0%;
+      background-color: var(--cor1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .faqsection h2 {
+      display: flex;
+      font-size: 3rem;
+      letter-spacing: 0.1rem;
+      color: var(--cor3);
+      font-family: var(--fonte2);
+    }
+
+    details,
+    details[open] {
+      display: block;
+      background-color: var(--cor3);
+      justify-items: center;
+      text-align: center;
+      border-radius: 1.5rem;
+      cursor: pointer;
+      padding: 2%;
+      min-width: auto;
+      max-height: auto;
+      font-family: var(--fonte2);
+      font-size: 1rem;
+      color: var(--preto);
+      overflow: hidden;
+    }
+
+    details[open] p {
+      display: block;
+    }
+
+    summary,
+    details p {
+      font-size: 2rem;
+    }
+
+    /* Seta */
+
+    summary::marker {
+      transition: 0.5s;
+    }
+
+    /* #region Media Queries Responsivo da Página Contato */
+
+    @media screen and (max-width: 768px) {
+      main {
+        padding: 5%;
+      }
+
+      main h2{
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      form {
+        flex-direction: column;
+        width: 100%;
+        padding: 5%;
+      }
+
+      .lado_esquerdo,
+      .lado_direito {
+        width: 100%;
+      }
+
+      .botoes {
+        justify-content: center;
+      }
+
+      .faqsection {
+        padding: 5%;
+      }
+
+      .faqsection h2{
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      details,
+      details[open] {
+        text-align: center;
+      }
+    }
+
+    /* #endregion */
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="menu_celular">
+
+    <nav>
+
+      <a href="inicio.html"> <img class="logo" src="Imagens/Logo.png"> </a>
+
+    </nav>
+
+    <nav>
+
+      <div class="menu_hamburguer" onclick="abrirMenu()">
+
+        <div class="traco_topo"></div>
+        <div class="traco_meio"></div>
+        <div class="traco_baixo"></div>
+
+      </div>
+
+      <div class="overlay" onclick="abrirMenu()"></div>
+
+      <nav class="menu_lateral">
+
+        <div class="x" onclick="abrirMenu()">
+
+          <div class="traco1"></div>
+          <div class="traco2"></div>
+
+        </div>
+
+        <ul class="menu_lateral_ul">
+
+          <li><a href="inicio.html" class="menu_item"> Início </a></li>
+
+          <li><a href="servicos.html" class="menu_item"> Serviços </a></li>
+
+          <li><a href="sobre.html" class="menu_item"> Sobre Mim </a></li>
+
+          <li><a href="#" class="menu_item"> Contato </a></li>
+
+        </ul>
+
+      </nav>
+
+    </nav>
+
+  </header>
+
+  <header class="cabecalho">
+
+    <nav>
+
+      <a href="inicio.html"> <img class="logo" src="Imagens/Logo.png"> </a>
+
+    </nav>
+    <nav class="nav_menu">
+
+      <ul class="menu">
+
+        <li><a href="inicio.html" class="menu_item"> Início </a></li>
+
+        <li><a href="servicos.html" class="menu_item"> Serviços </a></li>
+
+        <li><a href="sobre.html" class="menu_item"> Sobre Mim </a></li>
+
+        <li><a href="#" class="menu_item"> Contato </a></li>
+
+      </ul>
+
+    </nav>
+
+    <nav class="botao_contrate">
+
+      <a href="#formulario"> Contrate </a>
+
+    </nav>
+
+  </header>
+
+  <div class="botao_whatsapp">
+
+    <a target="_blank"
+      href="https://wa.me/5511951337184?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20meu%20pet!">
+      <img src="Ícones/icon_whatsapp.png" alt="Ícone do Whatsapp" />
+    </a>
+
+  </div>
+
+  <div class="botao_instagram">
+
+    <a target="_blank" href="https://www.instagram.com/dr.diegodealmeida?igsh=MXY0MjZ5Zzhremhzcg==">
+      <img src="Ícones/icon_instagram.png" alt="Ícone do Instagram" />
+    </a>
+
+  </div>
+
+  <section class="hero">
+
+    <h1>Pronto para agendar?</h1>
+
+    <h2>Seu pet merece o melhor!</h2>
+
+  </section>
+
+  <main>
+
+    <a name="formulario"></a>
+
+    <h2>Entre em contato e receba toda a orientação que você precisa!</h2>
+
+    <form name="cad" action="PHP/form.php" method="POST" autocomplete="on">
+      <section class="lado_esquerdo">
+        <label for="nome">Nome</label>
+        <input class="campos" type="text" name="nome" id="nome" minlength="5" maxlength="40" required />
+
+        <label for="telefone">Telefone</label>
+        <input class="campos" type="tel" name="telefone" id="telefone" autocomplete="tel"
+          pattern="^\(\d{2}\) ?\d{4,5}-?\d{4}$" placeholder="(xx)xxxxx-xxxx" required />
+
+        <label for="e-mail">E-mail</label>
+        <input class="campos" type="email" name="e-mail" id="e-mail" placeholder="email@exemplo.com" />
+
+        <label for="endereco"> Endereço</label>
+        <input class="campos" type="text" name="endereco" id="endereco" required />
+      </section>
+
+      <section class="lado_direito">
+        <label for="mensagem"> Deixe sua mensagem </label>
+
+        <textarea name="mensagem" id="mensagem" rows="8" cols="60" placeholder="Digite aqui o motivo do contato"
+          required></textarea>
+
+        <section class="botoes">
+          <input type="submit" value="Enviar" />
+          <input type="reset" value="Limpar" />
+        </section>
+
+      </section>
+
+    </form>
+
+  </main>
+
+  <section class="faqsection">
+
+    <h2> Perguntas Frequentes </h2>
+
+    <details>
+      <summary>Qual região você atende?</summary>
+      <p>Atendo toda a Grande São Paulo</p>
+    </details>
+
+    <details>
+      <summary>Você atende animais silvestres e exóticos?</summary>
+      <p>Sim, ofereço atendimento clínico a todas as espécies.</p>
+    </details>
+
+    <details>
+      <summary>É possível realizar exames durante a consulta?</summary>
+      <p>Sim, realizo a coleta de materiais, que são enviados
+        a laboratórios especializados.</p>
+    </details>
+
+  </section>
+
+  <footer class="rodape">
+
+    <p class="rodape_direitos">&copy; 2024 Todos os direitos reservados</p>
+
+    <p class="rodape_desenvolvido">
+
+      Desenvolvido por <a href="#"> r0und g\asses </a>
+
+    </p>
+
+  </footer>
+
+
+  <script src="JavaScript/menu_hamburguer.js"></script>
+
+</body>
+
+</html>

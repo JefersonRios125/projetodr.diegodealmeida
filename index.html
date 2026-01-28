@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+  <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="Ícones/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="CSS/estilo.css" type="text/css">
+
+    <link rel="stylesheet" href="CSS/media_queries.css" type="text/css">
+
+    <title>Início | Dr. Diego de Almeida </title>
+
+    <style>
+
+      /* #region Hero Section */
+
+      .hero {
+        background-color: var(--cor3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 80vh;
+        padding: 0 10%;
+      }
+
+      .hero_textos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hero_titulo {
+        font-family: var(--fonte1);
+        font-size: 2.5rem;
+        color: var(--cor1);
+      }
+
+      .botao_agende {
+        font-family: var(--fonte1);
+        background-color: var(--cor1);
+        font-size: 1.2rem;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
+        width: 200px;
+        border-radius: 2rem;
+        display: flex;
+        color: var(--branco);
+        transition: 0.5s ease;
+      }
+
+      .botao_agende:hover {
+        transform: scale(1.1);
+      }
+
+      /* #endregion */
+
+      /* #region Serviços */
+      .servicos {
+        background-color: var(--cor3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+        min-height: 100vh;
+        padding: 5% 10%;
+        overflow: hidden;
+      }
+
+      .servicos_header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .servicos_titulo,
+      .servicos_subtitulo {
+        font-family: var(--fonte2);
+        color: var(--cor1);
+        letter-spacing: 0.03rem;
+      }
+
+      .servicos_titulo {
+        font-size: 4rem;
+      }
+
+      .servicos_subtitulo {
+        font-size: 3rem;
+      }
+
+      .servicos_textos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--fonte1);
+        width: 80vw;
+        gap: 5%;
+        flex-wrap: wrap;
+      }
+
+      .servicos_vacinacao,
+      .servicos_exames {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 20vh;
+        align-items: center;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+        padding: 2%;
+        flex: 1 1 15%;
+      }
+
+      .servicos_vacinacao {
+        background-color: var(--cor1);
+        color: var(--branco);
+      }
+
+      .servicos_vacinacao a {
+        color: var(--branco);
+        position: relative;
+        align-self: flex-end;
+      }
+
+      .servicos_exames {
+        background-color: var(--cor2);
+        color: var(--cor1);
+      }
+
+      .servicos_exames a {
+        color: var(--cor1);
+        position: relative;
+        align-self: flex-end;
+      }
+
+      .servicos_exames h3, .servicos_vacinacao h3{
+        letter-spacing: 0.03rem;
+      }
+
+       /* #region Mais Detalhes */
+
+       .mais_detalhes {
+        text-decoration: none;
+        padding-right: 25px;
+        position: relative;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        letter-spacing: 0.05rem;
+      }
+
+      /* Setinha */
+      .mais_detalhes::after {
+        content: '→';
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      /* Linha */
+      .mais_detalhes::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition: 0.3s ease;
+      }
+
+      /* Hover da Linha */
+      .mais_detalhes:hover::before {
+        width: 100%;
+      }
+
+      /* Hover da Setinha */
+      .mais_detalhes:hover::after {
+        opacity: 1;
+        right: -5px;
+      }
+
+      /* #endregion Mais Detalhes */
+
+
+      /* #endregion */
+
+      /* #region Depoimentos */
+
+      .depoimentos {
+        background-color: var(--cor2);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100vh;
+        padding: 5% 10%;
+        gap: 5vh;
+      }
+
+      .depoimentos_textos {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        gap: 1rem;
+        font-family: var(--fonte1);
+      }
+
+      .depoimentos_texto {
+        font-size: 1.2rem;
+        color: var(--branco);
+        max-width: 500px;
+      }
+
+      .depoimentos_nome {
+        font-size: 1.2rem;
+        color: var(--cor1);
+        align-self: flex-end;
+      }
+
+      /* #endregion */
+
+      /* #region Media Queries Responsivo da Página Home */
+
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 55vh;
+    gap: 1vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero_textos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    text-align: center;
+  }
+
+  .hero_titulo {
+    font-size: 2rem;
+  }
+
+  .hero_imagem {
+    width: 120%;
+  }
+
+  .servicos{
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+    gap: 2vh;
+  }
+
+  .servicos_header {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2vh;
+  }
+
+  .servicos_imagem{
+    width: 100%;
+  }
+
+  .servicos_titulo{
+    font-size: 3.5rem;
+    display: flex;
+    text-align: center;
+  }
+
+  .servicos_textos {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+    padding: 0;
+    text-align: left;
+  }
+
+  .servicos_vacinacao,
+  .servicos_exames {
+    text-align: center;
+  }
+
+  .servicos_vacinacao a,
+  .servicos_exames a {
+    align-self: center;
+  }
+
+  .depoimentos {
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height:auto;
+    gap: 4vh;
+    overflow: hidden;
+    padding: 0; 
+  }
+
+  .depoimentos_imagem {
+    width: 120%;
+  }
+
+  .depoimentos_texto {
+    padding: 0 10%;
+    text-align: center;
+  }
+
+  .depoimentos_nome {
+    align-self: center;
+  }
+
+  .depoimentos_texto,
+  .depoimentos_nome {
+    font-size: 1.5rem;
+  }
+
+  .servicos_subtitulo {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+/* #endregion */
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header class="menu_celular">
+
+      <nav>
+
+        <a href="#"> <img class="logo" src="Imagens/Logo.png"> </a>
+
+      </nav>
+
+      <nav>
+
+        <div class="menu_hamburguer" onclick="abrirMenu()"> 
+
+          <div class="traco_topo"></div>
+          <div class="traco_meio"></div>
+          <div class="traco_baixo"></div>
+        
+        </div>
+
+        <div class="overlay" onclick="abrirMenu()"></div>
+      
+        <nav class="menu_lateral">
+
+          <div class="x" onclick="abrirMenu()">
+
+            <div class="traco1"></div>
+            <div class="traco2"></div>
+
+          </div>
+        
+          <ul class="menu_lateral_ul">
+        
+            <li><a href="#" class="menu_item"> Início </a></li>
+        
+            <li><a href="servicos.html" class="menu_item"> Serviços </a></li>
+        
+            <li><a href="sobre.html" class="menu_item"> Sobre Mim </a></li>
+        
+            <li><a href="contato.html" class="menu_item"> Contato </a></li>
+        
+          </ul>
+        
+        </nav>
+
+      </nav>
+
+    </header>
+
+    <header class="cabecalho">
+
+      <nav>
+
+        <a href="#"> <img class="logo" src="Imagens/Logo.png"> </a>
+
+      </nav>
+
+      <nav class="nav_menu">
+
+        <ul class="menu">
+
+          <li><a href="#" class="menu_item"> Início </a></li>
+
+          <li><a href="servicos.html" class="menu_item"> Serviços </a></li>
+
+          <li><a href="sobre.html" class="menu_item"> Sobre Mim </a></li>
+
+          <li><a href="contato.html" class="menu_item"> Contato </a></li>
+
+        </ul>
+
+      </nav>
+
+      <nav class="botao_contrate">
+
+        <a href="contato.html#formulario"> Contrate </a>
+
+      </nav>
+
+    </header>
+
+    <!-- Botões de Contato -->
+
+    <div class="botao_whatsapp">
+
+      <a target="_blank" href="https://wa.me/5511951337184?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20meu%20pet!">
+        <img src="Ícones/icon_whatsapp.png" alt="Ícone do Whatsapp"/>
+      </a>
+
+    </div>
+
+    <div class="botao_instagram">
+
+      <a target="_blank" href="https://www.instagram.com/dr.diegodealmeida?igsh=MXY0MjZ5Zzhremhzcg==">
+        <img src="Ícones/icon_instagram.png" alt="Ícone do Instagram"/>
+      </a>
+
+    </div>
+
+    <main class="hero">
+
+      <section class="hero_textos">
+
+        <h1 class="hero_titulo">
+          Cuidados <br/>
+          veterinários <br/>
+          sem sair de casa
+        </h1>
+
+        <a class="botao_agende" href="contato.html#formulario"> Agende uma Visita </a>
+
+      </section>
+
+      <img class="hero_imagem" src="Imagens/home_hero_imagem.jpg" alt="Texto alternativo">
+
+    </main>
+
+    <section class="servicos">
+
+      <header class="servicos_header">
+
+        <h2 class="servicos_titulo">Sobre os Serviços</h2>
+
+        <img class="servicos_imagem" src="Imagens/home_servicos_imagem.png" alt="Texto alternativo">
+
+        <h3 class="servicos_subtitulo">
+          O melhor atendimento para o seu melhor amigo
+        </h3>
+
+      </header>
+
+      <div class="servicos_textos">
+
+        <section class="servicos_vacinacao">
+
+          <h3 class="servicos_vacinacao_titulo">Vacinação</h3>
+
+          <p class="servicos_vacinacao_descricao">
+            Proteja seu pet de doenças graves como Cinomose, Parvovirose e Raiva com vacinas essenciais. Saúde e segurança para ele e para a família
+          </p>
+
+          <a class="mais_detalhes" href="servicos.html#vacinas">
+            Mais Detalhes
+          </a>
+
+        </section>
+
+        <section class="servicos_exames">
+
+          <h3 class="servicos_exames_titulo">Exames</h3>
+
+          <p class="servicos_exames_descricao">
+            Exames regulares ajudam a identificar doenças precocemente, garantindo a saúde e o bem-estar do seu pet.
+          </p>
+
+          <a class="mais_detalhes" href="servicos.html#exames">
+            Mais Detalhes
+          </a>
+
+        </section>
+
+      </div>
+
+    </section>
+
+    <section class="depoimentos">
+
+      <img class="depoimentos_imagem" src="Imagens/home_depoimentos_imagem.png" alt="Texto alternativo">
+
+      <div class="depoimentos_textos">
+
+        <p class="depoimentos_texto">
+          Fiquei muito satisfeita com o atendimento do Dr. Diego!
+          Ele foi extremamente atencioso e explicou todos os detalhes do
+          cuidado com meu pet. O atendimento domiciliar é maravilhoso,
+          pois meu animal se sente mais confortável em casa. Super recomendo!
+        </p>
+
+        <p class="depoimentos_nome">Amanda, dona do Thor</p>
+
+      </div>
+
+    </section>
+
+    <section class="call_to_action">
+
+      <p class="call_to_action_texto">
+        Que tal cuidar do seu pet sem sair de casa?
+      </p>
+
+      <p class="call_to_action_subtexto">
+        Agende uma consulta e garanta saúde e bem-estar com conforto!
+      </p>
+
+      <a class="call_to_action_botao" href="contato.html#formulario">
+        Agende uma visita
+      </a>
+
+    </section>
+
+    <footer class="rodape">
+
+      <p class="rodape_direitos">&copy; 2024 Todos os direitos reservados</p>
+
+      <p class="rodape_desenvolvido">
+
+        Desenvolvido por <a href="#"> r0und g\asses </a>
+
+      </p>
+
+    </footer>
+
+    <script src="JavaScript/menu_hamburguer.js"></script>
+
+  </body>
+
+</html>

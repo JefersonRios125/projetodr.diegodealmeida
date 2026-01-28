@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="Ícones/favicon.ico" type="image/x-icon">
+
+  <title> Serviços | Dr. Diego de Almeida</title>
+
+  <link rel="stylesheet" href="CSS/estilo.css" type="text/css">
+
+  <link rel="stylesheet" href="CSS/media_queries.css" type="text/css">
+
+  <style>
+    /* Hero Section */
+
+    .hero {
+      background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15)), url(Imagens/fundo_pattern.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 80vh;
+      padding: 0 10%;
+      color: var(--branco);
+      gap: 20px;
+      letter-spacing: 0.1rem;
+    }
+
+    .hero h1 {
+      display: flex;
+      font-size: 4rem;
+      font-family: var(--fonte2);
+    }
+
+    .hero h2 {
+      display: flex;
+      font-family: var(--fonte1);
+      letter-spacing: 0.1rem;
+    }
+
+    /* Seção de Explicação */
+
+    .explicacao {
+      background-color: var(--cor3);
+      color: var(--cor1);
+      min-height: 80vh;
+      padding: 0% 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .explicacao .titulo {
+      font-family: var(--fonte2);
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .explicacao .textos {
+      width: 100%;
+      display: flex;
+      text-align: left;
+      font-family: var(--fonte1);
+      font-size: 1.5rem;
+    }
+
+    /* Seção Vacinação e Exames */
+
+    .vacinas,
+    .exames {
+      height: 80vh;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .vacinas {
+      background-color: var(--cor2);
+      color: var(--branco)
+    }
+
+    .exames {
+      background-color: var(--cor3);
+      color: var(--cor1);
+    }
+
+    .servicos div {
+      width: 50%;
+      height: 100%;
+    }
+
+    .servicos figure {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .servicos img {
+      width: 100%;
+    }
+
+    .servicos_textos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0% 10%;
+    }
+
+    .servicos_textos h2 {
+      font-family: var(--fonte2);
+      font-size: 3rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .servicos_textos p {
+      font-family: var(--fonte1);
+      font-size: 1.5rem;
+    }
+
+    /* #region Media Queries Responsivo da Página Serviços */
+
+    @media screen and (max-width: 768px) {
+
+      .hero h2{
+        font-size: 2rem;
+      }
+      .explicacao {
+        padding: 5%;
+        text-align: center;
+      }
+
+      .explicacao .titulo {
+        font-size: 1.5rem ;
+        justify-content: left;
+      }
+
+      .explicacao .textos {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .servicos {
+        flex-direction: column;
+      }
+
+      .vacinas,
+      .exames {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .servicos div {
+        width: 100%;
+      }
+
+      .servicos_textos {
+        padding: 5%;
+      }
+    }
+
+    /* #endregion */
+  </style>
+
+</head>
+
+<body>
+
+  <header class="menu_celular">
+
+    <nav>
+
+      <a href="inicio.html"> <img class="logo" src="Imagens/Logo.png"> </a>
+
+    </nav>
+
+    <nav>
+
+      <div class="menu_hamburguer" onclick="abrirMenu()">
+
+        <div class="traco_topo"></div>
+        <div class="traco_meio"></div>
+        <div class="traco_baixo"></div>
+
+      </div>
+
+      <div class="overlay" onclick="abrirMenu()"></div>
+
+      <nav class="menu_lateral">
+
+        <div class="x" onclick="abrirMenu()">
+
+          <div class="traco1"></div>
+          <div class="traco2"></div>
+
+        </div>
+
+        <ul class="menu_lateral_ul">
+
+          <li><a href="inicio.html" class="menu_item"> Início </a></li>
+
+          <li><a href="#" class="menu_item"> Serviços </a></li>
+
+          <li><a href="sobre.html" class="menu_item"> Sobre Mim </a></li>
+
+          <li><a href="contato.html" class="menu_item"> Contato </a></li>
+
+        </ul>
+
+      </nav>
+
+    </nav>
+
+  </header>
+
+  <header class="cabecalho">
+
+    <nav>
+
+      <a href="inicio.html"> <img class="logo" src="Imagens/Logo.png"> </a>
+
+    </nav>
+
+    <nav class="nav_menu">
+
+      <ul class="menu">
+
+        <li><a href="inicio.html" class="menu_item"> Início </a></li>
+
+        <li><a href="#" class="menu_item"> Serviços </a></li>
+
+        <li><a href="sobre.html" class="menu_item"> Sobre Mim </a></li>
+
+        <li><a href="contato.html" class="menu_item"> Contato </a></li>
+
+      </ul>
+
+    </nav>
+
+    <nav class="botao_contrate">
+
+      <a href="contato.html#formulario"> Contrate </a>
+
+    </nav>
+
+  </header>
+
+  <div class="botao_whatsapp">
+
+    <a target="_blank"
+      href="https://wa.me/5511951337184?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20meu%20pet!">
+      <img src="Ícones/icon_whatsapp.png" alt="Ícone do Whatsapp" />
+    </a>
+
+  </div>
+
+  <div class="botao_instagram">
+
+    <a target="_blank" href="https://www.instagram.com/dr.diegodealmeida?igsh=MXY0MjZ5Zzhremhzcg==">
+      <img src="Ícones/icon_instagram.png" alt="Ícone do Instagram" />
+    </a>
+
+  </div>
+
+  <section class="hero">
+
+    <h1>Serviços</h1>
+
+    <h2>
+      Descubra como posso ajudar<br>
+      seu pet a viver melhor.
+    </h2>
+
+  </section>
+
+  <section class="explicacao">
+
+    <div class="titulo">
+      <h2> Atendimento Domiciliar </h2>
+    </div>
+
+    <div class="textos">
+
+      <p>
+        Cuidar da saúde do seu pet vai além de resolver problemas: é sobre prevenir,
+        acompanhar e garantir que ele tenha uma vida longa e feliz. Pensando nisso,
+        ofereço um serviço veterinário completo, diretamente no conforto do seu lar.
+      </p>
+
+
+      <p>
+        Seja para consultas de rotina, vacinação, exames ou cuidados mais específicos,
+        minha prioridade é sempre o bem-estar do seu animal. Atendimento domiciliar
+        significa menos estresse para o pet e mais conveniência para você
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="servicos">
+
+    <a name="vacinas"></a>
+    <section class="vacinas">
+
+      <div>
+
+        <figure>
+          <img src="Imagens/diego_5.jpg" alt="homem e cachorro">
+        </figure>
+
+      </div>
+
+      <div class="servicos_textos">
+
+        <h2>Vacinação</h2>
+
+        <p>
+          Vacinar é proteger! As vacinas previnem doenças graves, aumentam a qualidade de vida do seu
+          pet e ajudam a evitar zoonoses, como a Raiva. Cada pet tem um esquema de vacinação personalizado,
+          ajustado à idade, raça e estilo de vida.
+        </p>
+
+      </div>
+
+    </section>
+
+    <a name="exames"></a>
+    <section class="exames">
+
+      <div class="servicos_textos">
+
+        <h2>Exames</h2>
+
+        <p>
+          Detecte problemas antes que eles se agravem! Realizo coletas para exames de sangue,
+          urina, fezes, e muito mais. Cada check-up garante que seu pet receba o cuidado certo na hora certa.
+        </p>
+
+      </div>
+
+      <div>
+
+        <figure>
+          <img src="Imagens/diego_6.jpg" alt="gato">
+        </figure>
+
+      </div>
+
+    </section>
+
+  </section>
+
+  <section class="call_to_action">
+
+    <p class="call_to_action_texto">
+      Seu pet está com as vacinas e exames em dia?
+    </p>
+
+    <p class="call_to_action_subtexto">
+      Prevenir é sempre o melhor cuidado. Fale comigo agora!
+    </p>
+
+    <a class="call_to_action_botao" href="contato.html#formulario"> Saiba Mais </a>
+
+  </section>
+
+  <footer class="rodape">
+
+    <p class="rodape_direitos">&copy; 2024 Todos os direitos reservados</p>
+
+    <p class="rodape_desenvolvido"> Desenvolvido por <a href="#"> r0und g\asses </a> </p>
+
+  </footer>
+
+  <script src="JavaScript/menu_hamburguer.js"></script>
+
+</body>
+
+</html>

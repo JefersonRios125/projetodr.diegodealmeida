@@ -1,0 +1,14 @@
+{
+    "name": "alef/final",
+    "description": "Projeto Final",
+    "authors": [
+        {
+            "name": "Alef Teles"
+        }
+    ],
+    "require": {
+        "sendgrid/sendgrid": "^8.1",
+        "vlucas/phpdotenv": "^5.6"
+    }
+
+}
